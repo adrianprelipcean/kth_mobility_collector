@@ -4,7 +4,7 @@ public class Variables {
 
 	public static final String userName = "@CONFIG.USERNAME@";
 	public static final String password = "@CONFIG.PASSWORD@";
-	public static final String databaseName = "mobilitycollector";
+	public static final String databaseName = "@CONFIG.DBNAME@";
 	public static final String connectionURL = "postgresql://"+"@CONFIG.URL@"+":"+"@CONFIG.PORT@";
 
 	public static final String sqlStatement1 = "CREATE TABLE user_table(  userid serial NOT NULL,  username character varying(20) NOT NULL,  password_i character varying(20) NOT NULL,  CONSTRAINT user_table_pkey PRIMARY KEY (userid))";

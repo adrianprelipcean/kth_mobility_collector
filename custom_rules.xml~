@@ -135,6 +135,10 @@
                 <filter
                     token="CONFIG.PORT"
                     value="${config.port}" />
+
+		<filter
+                    token="CONFIG.DBNAME"
+                    value="${config.dbname}" />
             </filterset>
         </copy>
 
