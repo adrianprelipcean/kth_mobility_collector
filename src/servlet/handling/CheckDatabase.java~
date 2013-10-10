@@ -56,7 +56,7 @@ public class CheckDatabase extends HttpServlet {
 		  
 		  for (String s : tableString) { if
 		  (res.getString("TABLE_NAME").equals(s)) {
-		  response.getWriter().println( res.getString("TABLE_SCHEM") + ", " +
+		  response.getWriter().println( res.getString("TABLE_SCHEME") + ", " +
 		  res.getString("TABLE_NAME") + ", " + res.getString("TABLE_TYPE") +
 		  " -> " + "SUCCESS"); if (s.equals("user_table")) testUserDatabase =
 		  true; else testObjectDatabase = true; } } } res.close();
