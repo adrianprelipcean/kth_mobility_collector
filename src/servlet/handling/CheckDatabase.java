@@ -92,10 +92,10 @@ public class CheckDatabase extends HttpServlet {
 		  request.getRemoteAddr()); response.getWriter().println(
 		  "Remote Host = " + request.getRemoteHost() + " " +
 		  request.getRemotePort());
-		  
+
 		  connection.close(); } catch (SQLException e) {
 			response.getWriter().println(e.toString());
-			 e.printStackTrace(); }
+			 e.printStackTrace(); 
 		 
 	}
 

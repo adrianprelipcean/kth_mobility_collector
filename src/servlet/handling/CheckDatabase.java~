@@ -56,7 +56,7 @@ public class CheckDatabase extends HttpServlet {
 		  
 		  for (String s : tableString) { if
 		  (res.getString("TABLE_NAME").equals(s)) {
-		  response.getWriter().println( res.getString("TABLE_SCHEME") + ", " +
+		  response.getWriter().println( res.getString("TABLE_SCHEM") + ", " +
 		  res.getString("TABLE_NAME") + ", " + res.getString("TABLE_TYPE") +
 		  " -> " + "SUCCESS"); if (s.equals("user_table")) testUserDatabase =
 		  true; else testObjectDatabase = true; } } } res.close();
@@ -92,10 +92,14 @@ public class CheckDatabase extends HttpServlet {
 		  request.getRemoteAddr()); response.getWriter().println(
 		  "Remote Host = " + request.getRemoteHost() + " " +
 		  request.getRemotePort());
-		  
+		  	
+		DataOutputStream dos = new DataOutputStream(response.getOutputStream());
+		dos.writeUTF("Success");
+
 		  connection.close(); } catch (SQLException e) {
 			response.getWriter().println(e.toString());
-			 e.printStackTrace(); }
+			 e.printStackTrace(); 
+			dos.writeUTF("Failure");}
 		 
 	}
 
